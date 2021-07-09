@@ -13,14 +13,20 @@ The input [1, 2, 0] should give 3.
 """
 
 pos = []
+
+
 def SmallestMissingPositive(array):
     for number in array:
         if number > 0:
-            pos = pos.append(number)
+            pos.append(number)
     pos.sort()
     i = pos[1]
     solution = i - 1
-    return solution
+    if solution == 0:
+        return "There is no lower, missing positive integer"
+    else:
+        return solution
 
-test_array = [4,5,2,-2,0,-5,2]
-print(SmallestMissingPositive(test_array)) 
+
+test_array = [0.4, 1, 2, 3, 4, 5]
+print(SmallestMissingPositive(test_array))
